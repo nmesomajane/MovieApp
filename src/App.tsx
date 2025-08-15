@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+
 import axios from "axios";
 
 import "./index.css";
 import { AppRoutes } from "./config/routers/routes";
 
 function App() {
-  const dispatch = useDispatch();
+  
 
   useEffect(() => {
     axios.defaults.baseURL = "https://api.themoviedb.org/3";
