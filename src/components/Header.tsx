@@ -1,6 +1,6 @@
-import React, { useState, useEffect, FormEvent } from 'react';
+import { useState,  FormEvent } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import {FaTv, FaFilm, FaUser, FaSearch } from 'react-icons/fa';
+import {FaTv,  FaUser, FaSearch } from 'react-icons/fa';
 import HamburgerIcon from './HamburgerIcon';
 
 const navigation = [
@@ -8,12 +8,7 @@ const navigation = [
     label: 'Favorites',
     href: '/favorites',
     icon: <FaTv className="mr-2"/>
-  },
-  {
-    label: 'Movies',
-    href: '/movies',
-    icon: <FaFilm className="mr-2" />
-  },
+  }
 ];
 
 const Header = () => {

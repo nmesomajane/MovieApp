@@ -37,7 +37,7 @@ const SearchPage: React.FC = () => {
     <div className="container mx-auto px-4 py-6 text-white min-h-screen">
       <h2 className="text-2xl font-bold mb-4">Search Results for "{query}"</h2>
       {results.length > 0 ? (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 px-5 pt-10 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {results.map((item) => (
             <div key={item.id} className="bg-neutral-700 rounded-lg p-4 shadow-md">
               {item.poster_path && (

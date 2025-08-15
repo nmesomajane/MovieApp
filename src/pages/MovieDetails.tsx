@@ -23,29 +23,39 @@ const MovieDetails: React.FC = () => {
   }, [dispatch, movieId]);
 
   return (
-    <div className="p-4 min-h-screen">
-      {movieDetails && (
-        <>
-          <h1 className="text-2xl font-bold">{movieDetails.title}</h1>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
-            alt={movieDetails.title}
-            className="rounded-lg  h-[500px] w-auto pt-20 max-md:h-[300px]"
-          />
-          <p className="mt-2 text-gray-300">{movieDetails.overview}</p>
-          <button
-            onClick={() => {
-                dispatch(addToFavorites(movieDetails));
-                alert('The movie has been added to your favorites');
-              }}
-              className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
-            >
-            Add to Favorites ❤️
-          </button>
-        </>
-      )}
-    </div>
-  );
+  <div className="p-4 min-h-screen flex flex-col items-center text-center">
+    {movieDetails && (
+      <>
+        {/* Title */}
+        <h1 className="text-2xl md:text-4xl font-bold mb-4">{movieDetails.title}</h1>
+
+        {/* Poster */}
+        <img
+          src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+          alt={movieDetails.title}
+          className="rounded-lg w-full max-w-md h-auto mb-6"
+        />
+
+        {/* Overview */}
+        <p className="mt-2 text-gray-300 text-sm md:text-base max-w-2xl">
+          {movieDetails.overview}
+        </p>
+
+        {/* Add to Favorites Button */}
+        <button
+          onClick={() => {
+            dispatch(addToFavorites(movieDetails));
+            alert("The movie has been added to your favorites");
+          }}
+          className="bg-blue-500 hover:bg-blue-600 transition-colors text-white px-6 py-2 rounded mt-6"
+        >
+          Add to Favorites ❤️
+        </button>
+      </>
+    )}
+  </div>
+);
+
 };
 
 export default MovieDetails;
